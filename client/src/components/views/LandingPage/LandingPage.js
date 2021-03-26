@@ -4,9 +4,9 @@ import { API_URL, API_KEY, IMAGE_BASE_URL } from '../../Config';
 import MainImage from './Section/MainImage';
 function LandingPage() {
 
-    //2. 가져온 movie 정보를 array에 담아 state로 넘김
+    //2. 가져온 movie 정보를 array에 담아 state로 넘김 
     const [Movies, setMovies] = useState([])
-    //3. 2의 정보에서 제일 첫번쨰 영화사진(=제일 인기 있는 영화 이미지)
+    //3. 2의 정보에서 제일 첫번째 영화사진(=제일 인기 있는 영화 이미지)
     const [MainMovieImage, setMainMovieImage] = useState(null)
 
     //1. movie api를 가져온다.
