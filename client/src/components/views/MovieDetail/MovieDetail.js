@@ -4,6 +4,7 @@ import MainImage from '../commons/MainImage';
 import MovieInfo from './Sections/MovieInfo';
 import GridCards from '../commons/GridCards';
 import { Row } from 'antd';
+import Favorite from './Sections/Favorite';
 
 function MovieDetail(props) {
      //console.log(props.match);
@@ -37,8 +38,6 @@ function MovieDetail(props) {
         setActorToggle( !ActorToggle )
     } 
 
-
-
     return (
         <div>
             {/* header */}
@@ -50,6 +49,13 @@ function MovieDetail(props) {
             />
              {/* body */}
              <div style={{width: '85%', margin: '1rem auto'}}>
+
+
+                {/* Favorite Button : userFrom 의경우 페이지 로그인시에 local storage에 저장된 userId 값을 가져온다 */}
+                <div style={{display:'flex', justifyContent:'flex-end'}}>
+                    <Favorite movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')}    />
+                </div>
+
 
                  {/* Movie Info */}
                     <MovieInfo
